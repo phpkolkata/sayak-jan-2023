@@ -1,0 +1,42 @@
+.box{
+        border:1px solid black;
+        height:400px;
+        width:300px;
+        font-size: 20px;
+        color:red;
+        overflow: auto;
+        border-radius: 10px;
+        box-sizing: border-box;
+        float: left;
+        }
+        .fRight{
+            float:right;
+        }
+
+/* By Id  */
+
+        #abc{
+            background-color: aqua;
+        }
+
+/* By Tag */
+   
+    div{
+        padding: 20px;
+        margin: 20px;
+    }
+
+/* reference css */
+
+div > b {
+    font-size: 30px;
+}
+
+div  b {
+    font-size: 30px;
+}
+
+/* parallel css */
+div,p,table{
+    font-size: 20px;
+}
