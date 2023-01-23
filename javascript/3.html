@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="javascript">
+        function hello(){
+            var nm = document.getElementById("nm"); // selector
+            if(nm.value == ""){
+                alert("Please enter your name");
+                nm.focus();
+            }
+            else if(nm.value.length < 3){
+                alert("please enter your name above 2 chars")
+                nm.focus();
+            }
+            else{
+                alert("hello "+nm.value)
+            }
+        }
+    </script>
+</head>
+<body>
+    Name: <input type="text" id="nm">
+    <br>
+    <button onclick="hello()">Click</button>
+</body>
+</html>
+
+<!-- hw: -->
+name: (required, chars, 3-10)
+age: (required, number, 1-99)
+email: (required, format)
+gender(radio):(required)
+hobbies(checkbox): (required)
+city(dropdown):(required)

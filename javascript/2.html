@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="javascript">
+        function hello(){
+            var nm = document.getElementById("nm"); // selector
+            alert("hello "+nm.value)
+            // nm.type = "checkbox";
+        }
+    </script>
+</head>
+<body>
+    <!-- DOM level javascript is all about communication with body elements -->
+    Name: <input type="text" id="nm">
+    <br>
+    <button onclick="hello()">Click</button>
+</body>
+</html>
