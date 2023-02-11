@@ -1,0 +1,21 @@
+selector in js: 
+document.getElementById
+document.getElementByName
+document.getElementByTag
+document.getElementByClass
+
+var box = document.getElementById("box")
+
+selector in jquery:
+
+$("#box") - by ID
+$(".box") - by class
+$("div") - by Tag
+
+Annonymous Function: a function without a name
+
+function hi(){
+
+}
+
+function(){} - Annonymous function

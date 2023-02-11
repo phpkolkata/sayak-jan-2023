@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            color:red
+        }
+        .box2{
+            color:yellow;
+            border:1px solid black;
+            padding:20px;
+        }
+    </style>
+  </head>
+  <body>
+      <p>para</p>
+
+    <div>
+
+      <a id="link"><p id="p">para 1</p></a>
+      
+      <p >para</p>
+    </div>
+    <div>
+      <p>para</p>
+      <p>para</p>
+    </div>
+      <p>para</p>
+
+    <button id="btn">click</button>
+
+    <!-- befor body ends, include jquery -->
+    <script src="jquery.js"></script>
+    <script lang="javascript">
+      $("document").ready(function(){
+         $("#btn").click(function(){
+             // $("p:first").css("background-color", "red");
+             // $("p:even").css("background-color", "red");
+            //  $("p:first-child").css("background-color", "red");
+            //  $("p:nth-child(1)").css("background-color", "red");
+            //  $("div > p").css("background-color", "red");
+            //  $("div p").css("background-color", "red");
+            //  $("div").toggleClass("box2");
+            // alert($("#link").html());
+            $("#link").html("hi")
+         });
+
+         $("#link").mouseenter(function(){
+            $("#p").css("background-color", "red");
+            // alert("test");
+         });
+         $("#link").mouseleave(function(){
+            $("#p").css("background-color", "yellow");
+            // alert("test");
+         });
+
+      });
+    </script>
+  </body>
+</html>
