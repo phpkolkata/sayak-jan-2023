@@ -28,6 +28,12 @@ foreach($std as $k=>$v){
         foreach($v1 as $k2=>$v2){
             if(!is_array($v2))
             print "$k2-$v2<br>";
+            else{
+                print "<b>$k2:</b><br>";
+                foreach($v2 as $k3=>$v3){
+                    print "$k3-$v3<br>";
+                }
+            }
         }
     }
 }
