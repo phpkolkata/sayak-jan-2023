@@ -25,7 +25,7 @@ if($error == 0 ){
         copy($tmp_name, $path);
         header("location:24.php?msg=file uploaded!");
 
-        // print "<img src='$path'>";
+        // print "<img src='$path' height="" width="">";
     }
     else{
         // die("wrong file format");

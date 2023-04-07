@@ -12,6 +12,7 @@
 <?php
 // php area
     echo "my name is raj";
+    
 ?>
 
 <!-- htmal area -->

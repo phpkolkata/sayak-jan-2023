@@ -1,3 +1,16 @@
+<?php
+$arr = array("name"=>"raj", "age"=>12);
+
+// $name = $arr['name'];
+// $age = $arr['age'];
+
+extract($arr);
+
+print "hello $name, your age is $age";
+
+
+?>
+
 
 <form action="22.php?msg=hello" method="post">
     Name:<input type="text" name="nm"><br>

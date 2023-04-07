@@ -15,6 +15,10 @@ print_r($_REQUEST);
 // extract($_GET);
 // extract($_POST);
 extract($_REQUEST);
+
+// $nm = $_REQUEST['nm'];
+// $age = $_REQUEST['age'];
+
 $nm = strtoupper($nm);
 
 
