@@ -70,7 +70,12 @@ session_start();
             </li>
           </ul>
 
-          <div class="me-5"><a href="cart.php">Cart [<?php echo count($_SESSION['cart']) ?>] item(s)</a></div>
+          <?php
+          $total = 0;
+          if(isset($_SESSION['cart']))
+          $total = count($_SESSION['cart']);
+          ?>
+          <div class="me-5"><a href="cart.php">Cart [<?php echo $total ?>] item(s)</a></div>
         </div>
       </div>
     </nav>
