@@ -1,0 +1,25 @@
+Table - is a collection of records
+Database - is collection of Tables
+--------------------------------
+
+
+DB Name - mobile_store
+
+Tables:
+ - Category
+ - Product
+ - client
+ - Order
+
+
+ Category:
+ id(int 11)  name  is_active(y/n)
+
+ Product:
+ id  name  price  description(text)  image  is_active
+
+ Client:
+ id  name  email  password  mobile  address  is_active
+
+ Order:
+ id   cid  pid  price  qnty  date(date)  status

@@ -9,6 +9,6 @@
 // to delete a folder
 // rmdir("testing");
 
-// to change file mode
+// to chagnge file mode
 // 777 - read,write, execute for everyone (owner,group, public)
 // chmod("upload", 777);
