@@ -118,7 +118,6 @@ print "
      2. proper messaging for no search result found
      3. msg box auto disappear
      4. msg box x click to close manually
-
 -->
 
 
