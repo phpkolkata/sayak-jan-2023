@@ -1,0 +1,39 @@
+OOP - Object Oriented Programming
+
+
+class greet{
+
+    $name = "raj";
+
+    function hello(){}
+
+    function bye(){}
+
+    function hi(){}
+}
+
+class cacluation{
+    $val1=0;
+
+    function add(){}
+
+    function cacl(){}
+}
+------------------------
+
+include  file.php
+
+greet->hello()
+cacluation->add()
+---------------------
+
+class is a collection of methods(functions) & properties(variable)
+
+
+-----------------------------------------------
+4 pillar of OOP
+----------------
+1. Encapsulation - methods and properties encapsulate inside a class
+2. Inheritance - properties and methods inherits from parant class to child class
+3. Abstraction
+4. Polymorphism
