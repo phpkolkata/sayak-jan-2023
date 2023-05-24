@@ -11,9 +11,11 @@
 
 require "Greet2.class.php";
 
-$obj = new Greet2();
+$obj = new Greet2("raj");
 
-$obj->name = "raj";
+// $obj->name = "raj";
 $obj->hi();
 $obj->bye();
 $obj->hello();
+
+echo Greet::$age;

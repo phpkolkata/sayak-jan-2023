@@ -37,3 +37,16 @@ class is a collection of methods(functions) & properties(variable)
 2. Inheritance - properties and methods inherits from parant class to child class
 3. Abstraction
 4. Polymorphism
+
+
+
+---------------------------
+Visiblity: 
+            inClass     childClass      outsideClass
+PUBLIC        Y             Y               Y  
+PRIVATE       Y             N               N
+PROTECTED     Y             Y               N
+
+----------------------------
+
+Static Keyword - The static keyword is used to declare properties and methods of a class as static. Static properties and methods can be used without creating an instance of the class. 
