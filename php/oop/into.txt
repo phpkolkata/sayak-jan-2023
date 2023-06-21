@@ -35,8 +35,10 @@ class is a collection of methods(functions) & properties(variable)
 ----------------
 1. Encapsulation - methods and properties encapsulate inside a class
 2. Inheritance - properties and methods inherits from parant class to child class
-3. Abstraction
-4. Polymorphism
+3. Abstraction - An abstract class is a class that contains at least one abstract method. An abstract method is a method that is declared, but not implemented in the code.
+4. Polymorphism - Many Forms 
+                        - method overridding (same function implening in child class)
+                        - method overloading (same function with difference in params)
 
 
 
