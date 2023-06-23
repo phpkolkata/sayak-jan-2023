@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +43,8 @@ Route::get('/products/listing', function () {
 Route::get('/products/details/{id?}', function ($id = 0) {
     return view('products/details', ["id" => $id]);
 });
+
+// use of controller
+Route::get("/category/listing/{id}", [CategoryController::class, 'index']);
+Route::get("/category/add", [CategoryController::class, 'add']);
+Route::post("/category/add-cat", [CategoryController::class, 'addCat']);
