@@ -46,5 +46,6 @@ Route::get('/products/details/{id?}', function ($id = 0) {
 
 // use of controller
 Route::get("/category/listing/{id}", [CategoryController::class, 'index']);
+Route::get("/category/demo", [CategoryController::class, 'demo']);
 Route::get("/category/add", [CategoryController::class, 'add']);
 Route::post("/category/add-cat", [CategoryController::class, 'addCat']);

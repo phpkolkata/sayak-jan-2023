@@ -12,6 +12,12 @@ class CategoryController extends Controller
         return "indexing $id";
     }
 
+    public function demo()
+    {
+        //logics
+        return view("category/demo");
+    }
+
     public function add()
     {
         // return view('views/category/add.blade.php');
@@ -21,9 +27,17 @@ class CategoryController extends Controller
     public function addCat(Request $r)
     {
         // return $r->all();
-        return $r->except('_token');
+        // return $r->except('_token');
         // return $r->input('cname');
-        return "adding";
+
+        // validataion
+        $validated = $r->validate([
+            'cname' => 'required|max:7|min:2',
+            'price' => 'required|numeric',
+        ]);
+
+        $data = $r->except('_token');
+        return view("category/submitted", ["data" => $data]);
     }
 
 }
