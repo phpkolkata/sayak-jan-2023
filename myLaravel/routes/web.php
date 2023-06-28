@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,19 @@ Route::get('/products/details/{id?}', function ($id = 0) {
 });
 
 // use of controller
-Route::get("/category/listing/{id}", [CategoryController::class, 'index']);
-Route::get("/category/demo", [CategoryController::class, 'demo']);
-Route::get("/category/add", [CategoryController::class, 'add']);
-Route::post("/category/add-cat", [CategoryController::class, 'addCat']);
+Route::prefix("/category/")->group(function () {
+    Route::get("listing/{id}", [CategoryController::class, 'index'])->name('clist');
+    Route::get("demo", [CategoryController::class, 'demo']);
+    Route::get("add", [CategoryController::class, 'add'])->name('cadd');
+    Route::post("add-cat", [CategoryController::class, 'addCat']);
+});
+
+Route::resource('emp', EmployeeController::class);
+// Basic urls for every section. ex: product
+// 1 add (form)
+// 2. adding (post data)
+// 3. list (all records)
+// 4. del (id=2)
+// 5. edit (id = 3)
+// 6. update (post data along with id)
+// 7. detail (id=2)

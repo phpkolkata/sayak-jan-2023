@@ -2,6 +2,11 @@
 
 @section('body')
 new body
+
+<br>
+
+<a href="{{ route('clist',33) }}">Click here</a>
+<a href="{{ route('cadd') }}">Click here</a>
 @endsection
 
 
