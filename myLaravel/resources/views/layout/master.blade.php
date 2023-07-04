@@ -11,22 +11,29 @@
 
 </head>
 <body>
-<h1>Master Page</h1>
-    <div>Header</div>
-    <div>navigation
 
-        @section('nav')
-        <ul>
-            <li>listing 1</li>
-            <li>listing 2</li>
-        </ul>
-        @show
-
+<div class="container border " style="height:680px">
+    <div class="row">
+        <div class="col" style="height: 100px">
+        <h1>Welcome Admin</h1>
+        </div>
     </div>
-    <div>
-        @yield('body')
+    <div class="row" style="height:500px">
+        <div class="col-2 border">
+            <ul style="font-size:20px;">
+				<li><a href="category.php">Manage Category</a></li>
+				<li><a href="product.php">Manage Product</a></li>
+			</ul>
+            @yield('nav')
+        </div>
+        <div class="col border">
+            @yield('body')
+        </div>
     </div>
-    <div>footer</div>
+    <div class="row">
+        <div class="col" style="height:50px">footer</div>
+    </div>
+</div>
 
 
 </body>

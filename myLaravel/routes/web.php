@@ -47,10 +47,11 @@ Route::get('/products/details/{id?}', function ($id = 0) {
 
 // use of controller
 Route::prefix("/category/")->group(function () {
-    Route::get("listing/{id}", [CategoryController::class, 'index'])->name('clist');
+    Route::get("listing/{id?}", [CategoryController::class, 'index'])->name('clist');
     Route::get("demo", [CategoryController::class, 'demo']);
     Route::get("add", [CategoryController::class, 'add'])->name('cadd');
     Route::post("add-cat", [CategoryController::class, 'addCat']);
+    Route::get("delete/{id}", [CategoryController::class, 'delete'])->name('del.cat');
 });
 
 Route::resource('emp', EmployeeController::class);

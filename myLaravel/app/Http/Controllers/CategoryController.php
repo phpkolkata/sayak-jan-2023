@@ -2,14 +2,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
 
-    public function index($id)
+    public function index($id = 0)
     {
         //logics
-        return "indexing $id";
+        // return "indexing $id";
+
+        $rows = DB::table('category')->paginate(2);
+        // return $rows;
+        return view('category.index', ["db" => $rows]);
     }
 
     public function demo()
@@ -38,6 +43,14 @@ class CategoryController extends Controller
 
         $data = $r->except('_token');
         return view("category/submitted", ["data" => $data]);
+    }
+
+    public function delete($id)
+    {
+        // return $id;
+
+        $del = DB::table('category')->where('id', '=', $id)->delete();
+        return redirect()->route('clist')->with('msg', 'Category deleted!');
     }
 
 }
