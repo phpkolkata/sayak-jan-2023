@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -12,7 +12,12 @@ class CategoryController extends Controller
         //logics
         // return "indexing $id";
 
-        $rows = DB::table('category')->paginate(10);
+        // QB
+        // $rows = DB::table('category')->paginate(10);
+
+        // EL
+        $rows = Category::paginate(10);
+
         // return $rows;
         return view('category.index', ["db" => $rows]);
     }
@@ -43,7 +48,12 @@ class CategoryController extends Controller
 
         $data = $r->except('_token');
 
-        DB::table('category')->insert($data);
+        // DB::table('category')->insert($data);
+        Category::insert($data);
+
+        $cat = new Category();
+        $cat->name = $r->name;
+        $cat->save();
 
         return redirect("/category/listing")->with('msg', 'Category Added!');
 
@@ -54,13 +64,15 @@ class CategoryController extends Controller
     {
         // return $id;
 
-        $del = DB::table('category')->where('id', '=', $id)->delete();
+        // $del = DB::table('category')->where('id', '=', $id)->delete();
+        $del = Category::where('id', '=', $id)->delete();
         return redirect()->route('clist')->with('msg', 'Category deleted!');
     }
 
     public function edit($id)
     {
-        $data = DB::table('category')->where("id", $id)->get();
+        // $data = DB::table('category')->where("id", $id)->get();
+        $data = Category::where("id", $id)->get();
         // return $data;
         return view('category/edit', ["data" => $data]);
 
@@ -76,7 +88,8 @@ class CategoryController extends Controller
         $data = $r->except('_token', 'cid');
         $cid = $r->input('cid');
 
-        DB::table('category')->where("id", $cid)->update($data);
+        // DB::table('category')->where("id", $cid)->update($data);
+        Category::where("id", $cid)->update($data);
 
         return redirect("/category/listing")->with('msg', 'Category Updated!');
 
