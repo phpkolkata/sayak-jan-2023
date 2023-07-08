@@ -21,7 +21,7 @@
     <div class="row" style="height:500px">
         <div class="col-2 border">
             <ul style="font-size:20px;">
-				<li><a href="category.php">Manage Category</a></li>
+				<li><a href="/category/listing">Manage Category</a></li>
 				<li><a href="product.php">Manage Product</a></li>
 			</ul>
             @yield('nav')

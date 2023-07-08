@@ -9,6 +9,9 @@
     </div>
 @endif
 
+
+<div> <a href="/category/add">Add...</a></div>
+
 <table class="table table-strip">
     <tr>
         <th>ID</th>
@@ -22,7 +25,7 @@
         <td>{{ $row->id }}</td>
         <td>{{ $row->name }}</td>
         <td>{{ $row->is_active }}</td>
-        <td><a href='{{ route('del.cat', $row->id) }}'>del</a></td>
+        <td><a href='{{ route('del.cat', $row->id) }}'>del</a> / <a href='{{ route('edit.cat', $row->id) }}'>edit</a></td>
     </tr>
     @endforeach
 

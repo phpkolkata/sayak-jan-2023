@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title') Add Category @endsection
+@section('title') EDIT Category @endsection
 
 @section('body')
 @if ($errors->any())
@@ -14,17 +14,18 @@
 @endif
 
 
-    <h1>Add Category</h1>
+    <h1>EDIT Category</h1>
 
-    <form action="add-cat" method="post">
+    <form action="{{ route('update.cat') }}" method="post">
         @csrf()
-        Name:<input type="text" name="name"><br>
+        <input type="hidden" name="cid" value="{{ $data[0]->id }}">
+        Name:<input type="text" name="name" value="{{ $data[0]->name }}"><br>
         isActive:
         <select name="is_active">
             <option value="y">Yes</option>
             <option value="n">No</option>
         </select>
         <br>
-        <button>Add</button>
+        <button>Update</button>
     </form>
 @endsection

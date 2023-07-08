@@ -52,6 +52,9 @@ Route::prefix("/category/")->group(function () {
     Route::get("add", [CategoryController::class, 'add'])->name('cadd');
     Route::post("add-cat", [CategoryController::class, 'addCat']);
     Route::get("delete/{id}", [CategoryController::class, 'delete'])->name('del.cat');
+    Route::get("edit/{id}", [CategoryController::class, 'edit'])->name('edit.cat');
+    Route::post("update-cat", [CategoryController::class, 'updateCat'])->name('update.cat');
+
 });
 
 Route::resource('emp', EmployeeController::class);

@@ -12,7 +12,7 @@ class CategoryController extends Controller
         //logics
         // return "indexing $id";
 
-        $rows = DB::table('category')->paginate(2);
+        $rows = DB::table('category')->paginate(10);
         // return $rows;
         return view('category.index', ["db" => $rows]);
     }
@@ -37,12 +37,17 @@ class CategoryController extends Controller
 
         // validataion
         $validated = $r->validate([
-            'cname' => 'required|max:7|min:2',
-            'price' => 'required|numeric',
+            'name' => 'required|max:7|min:2',
+            'is_active' => 'required',
         ]);
 
         $data = $r->except('_token');
-        return view("category/submitted", ["data" => $data]);
+
+        DB::table('category')->insert($data);
+
+        return redirect("/category/listing")->with('msg', 'Category Added!');
+
+        // return view("category/submitted", ["data" => $data]);
     }
 
     public function delete($id)
@@ -51,6 +56,30 @@ class CategoryController extends Controller
 
         $del = DB::table('category')->where('id', '=', $id)->delete();
         return redirect()->route('clist')->with('msg', 'Category deleted!');
+    }
+
+    public function edit($id)
+    {
+        $data = DB::table('category')->where("id", $id)->get();
+        // return $data;
+        return view('category/edit', ["data" => $data]);
+
+    }
+
+    public function updateCat(Request $r)
+    {
+        $validated = $r->validate([
+            'name' => 'required|min:2',
+            'is_active' => 'required',
+        ]);
+
+        $data = $r->except('_token', 'cid');
+        $cid = $r->input('cid');
+
+        DB::table('category')->where("id", $cid)->update($data);
+
+        return redirect("/category/listing")->with('msg', 'Category Updated!');
+
     }
 
 }
